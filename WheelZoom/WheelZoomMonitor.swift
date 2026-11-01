@@ -39,9 +39,9 @@ final class WheelZoomMonitor {
             let ctrl = event.modifierFlags.contains(.control)
             let delta = event.scrollingDeltaY
             
-            print("App: \(appID)")
-            print("Ctrl: \(ctrl)")
-            print("Delta: \(delta)")
+  //          print("App: \(appID)")
+  //          print("Ctrl: \(ctrl)")
+  //          print("Delta: \(delta)")
             
             // Numbersだけを対象にする
             guard appID == "com.apple.iWork.Numbers"
@@ -53,7 +53,7 @@ final class WheelZoomMonitor {
             // ホイール回転量の確認
             guard delta != 0 else { return }
             
-            print("Numbers操作：条件判定通過")
+//            print("Numbers操作：条件判定通過")
             
             // 連続イベントの間引き
             let now = Date()
@@ -61,13 +61,13 @@ final class WheelZoomMonitor {
             guard now.timeIntervalSince(
                 self.lastZoomTime
             ) >= 0.18 else {
-                print("連続イベントを間引きました")
+//                print("連続イベントを間引きました")
                 return
             }
             
             self.lastZoomTime = now
             
-            print("sendZoomShortcutを呼び出します")
+//            print("sendZoomShortcutを呼び出します")
             
             self.sendZoomShortcut(zoomIn: delta > 0)
         }
@@ -80,8 +80,8 @@ final class WheelZoomMonitor {
     
     // Numbersへショートカットを送信
     private func sendZoomShortcut(zoomIn: Bool) {
-        print("倍率変更指示: \(zoomIn ? "拡大" : "縮小")")
-        print("Accessibility trusted: \(AXIsProcessTrusted())")
+//        print("倍率変更指示: \(zoomIn ? "拡大" : "縮小")")
+//        print("Accessibility trusted: \(AXIsProcessTrusted())")
         
         // 拡大：ピリオド、縮小：カンマ
         let keyCode: CGKeyCode = zoomIn ? 47 : 43
