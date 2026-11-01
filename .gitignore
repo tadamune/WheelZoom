@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Xcode per-user state and build artifacts
+xcuserdata/
+*.xcuserstate
+DerivedData/
+build/
+.build/
+*.hmap
+*.ipa
+*.dSYM/
+*.dSYM.zip
+
+# Swift Package Manager local state
+.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+# Local secrets and signing material (never publish)
+.env
+.env.*
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile
+*.key
+*.pem
